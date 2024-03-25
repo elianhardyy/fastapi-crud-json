@@ -1,0 +1,13 @@
+{% extends 'layouts/main.html' %}
+{% block content %}
+<h1>Hello Register</h1>
+<form action="{{ url_for('add_user') }}" method="post">
+    <label for="" class="form-label">Username</label>
+    <input type="text" name="username" id="" class="form-control">
+    <label for="" class="form-label">Email</label>
+    <input type="email" name="email" id="" class="form-control">
+    <label for="" class="form-label">Password</label>
+    <input type="password" name="password" id="" class="form-control">
+    <button type="submit">Register</button>
+</form>
+{% endblock content %}

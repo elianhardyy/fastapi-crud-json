@@ -48,3 +48,48 @@ def getSingle(id:int):
             return {
                 "data":d
             }
+
+@post_route.put("/edit-user/{id}")
+def update(id:int,user:UserSchema):
+    with open("data/data.json","r") as file:
+        data=json.load(file)
+    if id > len(data):
+        return {
+            "error":"Post data not found"
+        }
+    for d in data:
+        if d["id"] == id:
+           user.id = d["id"]
+           objedit = [{
+            "id":len(data)+1,
+            "name":user.name,
+            "age":user.age,
+            "email":user.email,
+            "address":user.address
+            }] 
+        editobject = d[id]
+        with open("data/data.json","w") as edit:
+            json.dump(editobject,edit)
+        return {
+            "info":"has been edited"
+        }
+
+@post_route.delete("/delete/{id}")
+def remove(id:int):
+    with open("data/data.json","r") as file:
+        data=json.load(file)
+    if id > len(data):
+        return {
+            "error":"Post data not found"
+        }
+    for d in data:
+        if d["id"] == id:
+            del d
+            with open("data/data.json","w") as adddel:
+                json.dump(data,adddel)
+            return {
+                "info":"success delete"
+            }
+
+
+
