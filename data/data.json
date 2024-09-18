@@ -1,3 +1,5 @@
-[{"id": 1, "name": "elian", "age": 20, "email": "elian@mail.com", "address": "papa"}, 
+[
+    {"id": 1, "name": "elian", "age": 20, "email": "elian@mail.com", "address": "papa"}, 
 {"id": 2, "name": "elian", "age": 0, "email": "elian@mail.com", "address": "mjk"}, 
-{"id": 3, "name": "elian", "age": 0, "email": "elian@mail.com", "address": "mjk"}]
+{"id": 3, "name": "elian", "age": 0, "email": "elian@mail.com", "address": "mjk"}
+]
